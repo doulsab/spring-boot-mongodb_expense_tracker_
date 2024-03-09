@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.dd.springmongodemo.model.ExpenseCategory.ENTERTAINMENT;
+import static com.dd.springmongodemo.model.ExpenseCategory.*;
 
 @ChangeLog
 public class DatabaseChangeLog {
@@ -20,7 +20,10 @@ public class DatabaseChangeLog {
     public void seedDefaultData(ExpenseRepo expenseRepo) {
         List<Expense> expenseList = new ArrayList<>();
         expenseList.add(addNewExpense("Gym", ENTERTAINMENT, BigDecimal.valueOf(2000)));
-        expenseList.add(addNewExpense("Movies", ENTERTAINMENT, BigDecimal.valueOf(500)));
+        expenseList.add(addNewExpense("Movies Tickets", ENTERTAINMENT, BigDecimal.valueOf(500)));
+        expenseList.add(addNewExpense("Rice ", GROCERIES, BigDecimal.valueOf(500)));
+        expenseList.add(addNewExpense("Dinner Meal", RESTAURANT, BigDecimal.valueOf(500)));
+        expenseList.add(addNewExpense("Petroleum", UTILITIES, BigDecimal.valueOf(500)));
         expenseRepo.insert(expenseList);
     }
 
